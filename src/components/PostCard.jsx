@@ -67,6 +67,7 @@ const PostCard = ({ featuredImage, title, userId,AuthorName }) => {
               <span className="ml-3 font-medium text-gray-700">{profile.name}</span>
             </Link>
           ) : (
+            <Link to={`/profile/${userId}`} className="flex items-center">
             <div className="flex items-center">
               <img
                 className="rounded-full w-10 h-10 object-cover border-2 border-gray-200"
@@ -75,6 +76,8 @@ const PostCard = ({ featuredImage, title, userId,AuthorName }) => {
               />
               <span className="ml-3 text-gray-500">{AuthorName}</span>
             </div>
+              </Link>
+              
           )}
         </div>
       </div>

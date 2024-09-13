@@ -15,7 +15,7 @@ const Post = () => {
     if (window.confirm('Are you sure you want to delete this post?')) {
       try {
         await services.deletePost(id);
-        navigate('/allposts');
+        navigate('/');
       } catch (error) {
         console.error('Error deleting post:', error);
       }
