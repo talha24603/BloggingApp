@@ -14,6 +14,7 @@ const Login =  () => {
     const {register,handleSubmit}=useForm()
     const login= async (data)=>{
         try {
+            setError(null)
             setLoading(true)
             const user= await authServices.login(data)   
             console.log(user);
@@ -32,7 +33,7 @@ const Login =  () => {
         finally{
             setLoading(false)
         }
-        setError(null)
+        
            
 
     }
@@ -47,7 +48,7 @@ const Login =  () => {
                 <Link className='text-blue-600 font-semibold' to={'/signup'}> SignUp</Link>
             </span>
             </div>
-            <span>{error}</span>
+            <span className='text-red-600'>{error}</span>
             <input className='p-2 border rounded-full border-blue-400 w-full'
             label='Email:'
             type='email'
